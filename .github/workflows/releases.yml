@@ -1,4 +1,4 @@
-name: Criar nova release
+name: Create new release
 
 env:
   plugin_name: auto-champion-select
@@ -10,29 +10,34 @@ on:
     paths:
       - index.js
       - README.md
-      - README.br.md
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v3
       
-      - name: Criando uma pasta
+      - name: Create Directory
         run: mkdir ${{ env.plugin_name }}
 
-      - name: Movendo os arquivos para a pasta
-        run: mv index.js README.md README.br.md ${{ env.plugin_name }}
+      - name: Move Files to Directory
+        run: mv index.js README.md ${{ env.plugin_name }}
 
-      - name: Zipando a pasta
+      - name: Zip Directory
         run: zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}
 
-      - name: Criando a release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: ${{ env.plugin_name }} v${{ github.run_number }}
-          tag_name: v${{ github.run_number }}
-          files: ${{ env.plugin_name }}.zip
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v1.0.0  # Replace with your tag name
+          release_name: Release v1.0.0  # Replace with your release name
+          body: |
+            Release v1.0.0
+            - Added index.js and README.md
+          draft: false
+          prerelease: false
+          files: ${{ env.plugin_name }}.zip
