@@ -1,7 +1,7 @@
 name: Create new release
 
 env:
-  plugin_name: auto-pick-ban
+  plugin_name: obg-pick-ban
 
 on:
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
         with:
           tag_name: v1.0.0  # Replace with your tag name
           release_name: Release v1.0.0  # Replace with your release name
-          body: |
+          body: 
             Release v1.0.0
             - Added index.js and README.md
           draft: false

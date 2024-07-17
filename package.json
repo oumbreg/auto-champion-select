@@ -1,5 +1,6 @@
 {
-    "name": "auto-pick-ban",
+    "name": "obg-pick-ban
+",
     "version": "1.1.0",
     "description": "auto pack/ban",
     "author": "oumbreg",
@@ -17,9 +18,9 @@
     "watch": "vite build --watch --outDir ."
   },
   "bugs": {
-    "url": "https://github.com/oumbreg/auto-champion-select/issues"
+    "url": "https://github.com/oumbreg/auto-pick-ban/issues"
   },
-  "homepage": "https://github.com/oumbreg/auto-champion-select#readme",
+  "homepage": "https://github.com/oumbreg/auto-pick-ban#readme",
   "devDependencies": {
     "vite": "^4.4.6",
     "vite-plugin-css-injected-by-js": "^3.2.1"
