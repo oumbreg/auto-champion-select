@@ -1,0 +1,38 @@
+name: Criar nova release
+
+env:
+  plugin_name: auto-champion-select
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+  push:
+    paths:
+      - index.js
+      - README.md
+      - README.br.md
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Criando uma pasta
+        run: mkdir ${{ env.plugin_name }}
+
+      - name: Movendo os arquivos para a pasta
+        run: mv index.js README.md README.br.md ${{ env.plugin_name }}
+
+      - name: Zipando a pasta
+        run: zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}
+
+      - name: Criando a release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.plugin_name }} v${{ github.run_number }}
+          tag_name: v${{ github.run_number }}
+          files: ${{ env.plugin_name }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
