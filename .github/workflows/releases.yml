@@ -40,4 +40,8 @@ jobs:
             - Added index.js and README.md
           draft: false
           prerelease: false
+<<<<<<< HEAD
           files: ${{ env.plugin_name }}.zip
+=======
+          files: ${{ env.plugin_name }}.zip
+>>>>>>> 66835e24530845ee574c8c5142719992c6f3b00b
