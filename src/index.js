@@ -3,22 +3,15 @@ import { ChampionSelect, Dropdown, Checkbox, SocialSection } from "./models.js";
 import { version } from "../package.json";
 import "./assets/style.css";
 
-/**
- * @author balaclava
- * @name auto-champion-select
- * @link https://github.com/controlado/auto-champion-select
- * @description Pick or ban automatically! 🐧
- */
-
 const championSelect = new ChampionSelect();
 
-const pickCheckbox = new Checkbox("Pick", "controladoPick");
-const firstPlayableChampionsDropdown = new Dropdown("1st pick option", "controladoPick", 0, getPlayableChampions);
-const secondPlayableChampionsDropdown = new Dropdown("2nd pick option", "controladoPick", 1, getPlayableChampions);
+const pickCheckbox = new Checkbox("Pick", "Pick");
+const firstPlayableChampionsDropdown = new Dropdown("1st pick option", "Pick", 0, getPlayableChampions);
+const secondPlayableChampionsDropdown = new Dropdown("2nd pick option", "Pick", 1, getPlayableChampions);
 
-const banCheckbox = new Checkbox("Ban", "controladoBan");
-const firstAllChampionsDropdown = new Dropdown("1st ban option", "controladoBan", 0, getAllChampions);
-const secondAllChampionsDropdown = new Dropdown("2nd ban option", "controladoBan", 1, getAllChampions);
+const banCheckbox = new Checkbox("Ban", "Ban");
+const firstAllChampionsDropdown = new Dropdown("1st ban option", "Ban", 0, getAllChampions);
+const secondAllChampionsDropdown = new Dropdown("2nd ban option", "Ban", 1, getAllChampions);
 
 function getSocialContainer() {
     return document.querySelector("lol-social-roster.roster");
@@ -85,8 +78,8 @@ window.addEventListener("load", async () => {
     dropdownsContainer.append(firstPlayableChampionsDropdown.element, secondPlayableChampionsDropdown.element);
     dropdownsContainer.append(firstAllChampionsDropdown.element, secondAllChampionsDropdown.element);
 
-    const pluginSection = new SocialSection("Auto champion select", dropdownsContainer, checkboxesContainer);
+    const pluginSection = new SocialSection("123", dropdownsContainer, checkboxesContainer);
     socialContainer.append(pluginSection.element, checkboxesContainer, dropdownsContainer);
 
-    console.debug(`auto-champion-select(${version}): Report bugs to Balaclava#1912`);
+    console.debug(`auto-champion-select(${version}): `);
 });

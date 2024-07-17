@@ -1,12 +1,12 @@
 {
-    "controladoPick": {
+    "Pick": {
         "status": false,
         "champions": [
             21,
             21
         ]
     },
-    "controladoBan": {
+    "Ban": {
         "status": false,
         "champions": [
             21,

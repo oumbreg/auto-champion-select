@@ -1,24 +1,16 @@
 {
-  "name": "auto-champion-select",
-  "version": "1.1.5",
-  "description": "Pick or ban automatically! 🐧",
-  "author": "balaclava",
-  "repository": {
+    "name": "auto-champion-select",
+    "version": "1.1.0",
+    "description": "auto pack/ban",
+    "author": "oumbreg",
+    "repository": {
     "type": "git",
-    "url": "git+https://github.com/controlado/auto-champion-select.git"
+    "url": ""
   },
   "license": "GPL-3.0-or-later",
   "main": "./dist/index.js",
   "files": [
     "dist"
-  ],
-  "keywords": [
-    "pengu-loader",
-    "league-client",
-    "league-of-legends",
-    "plugins",
-    "balaclava",
-    "controlado"
   ],
   "scripts": {
     "build": "vite build",
