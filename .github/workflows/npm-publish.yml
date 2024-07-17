@@ -4,30 +4,29 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - src/**
-      - package.json
-      - package-lock.json
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
+          node-version: '20'  # Use the latest stable Node.js version
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build the plugin
-        run: npm run build
+      - name: Build the Plugin
+        run: npm run build  # Replace with your build command if necessary
 
-      - name: Publish the package
+      - name: Publish the Package
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
