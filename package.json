@@ -1,28 +1,15 @@
 {
-    "name": "obg-pick-ban
-",
-    "version": "1.1.0",
-    "description": "auto pack/ban",
-    "author": "oumbreg",
-    "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "license": "GPL-3.0-or-later",
-  "main": "./dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "name": "obg-pick-ban",
+  "version": "1.0.0",
+  "description": "Description of your package",
+  "main": "index.js",
   "scripts": {
-    "build": "vite build",
-    "watch": "vite build --watch --outDir ."
+    "start": "node index.js"
   },
-  "bugs": {
-    "url": "https://github.com/oumbreg/auto-pick-ban/issues"
-  },
-  "homepage": "https://github.com/oumbreg/auto-pick-ban#readme",
-  "devDependencies": {
-    "vite": "^4.4.6",
-    "vite-plugin-css-injected-by-js": "^3.2.1"
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "example-package": "^1.0.0"
   }
 }
+
