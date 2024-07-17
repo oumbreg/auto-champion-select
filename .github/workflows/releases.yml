@@ -1,7 +1,7 @@
 name: Create new release
 
 env:
-  plugin_name: auto-champion-select
+  plugin_name: auto-pick-ban
 
 on:
   workflow_dispatch:
