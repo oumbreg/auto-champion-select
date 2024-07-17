@@ -1,4 +1,4 @@
-name: Criar nova release
+name: Create new release
 
 env:
   plugin_name: auto-champion-select
@@ -10,7 +10,6 @@ on:
     paths:
       - index.js
       - README.md
-      - README.br.md
 
 jobs:
   release:
@@ -19,20 +18,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Criando uma pasta
+      - name: Creating a folder
         run: mkdir ${{ env.plugin_name }}
 
-      - name: Movendo os arquivos para a pasta
+      - name: Moving files to the folder
         run: mv index.js README.md README.br.md ${{ env.plugin_name }}
 
-      - name: Zipando a pasta
+      - name: Zipping the folder
         run: zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}
 
-      - name: Criando a release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: ${{ env.plugin_name }} v${{ github.run_number }}
-          tag_name: v${{ github.run_number }}
-          files: ${{ env.plugin_name }}.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Creating the release

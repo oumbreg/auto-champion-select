@@ -17,9 +17,9 @@
     "watch": "vite build --watch --outDir ."
   },
   "bugs": {
-    "url": "https://github.com/controlado/auto-champion-select/issues"
+    "url": "https://github.com/oumbreg/auto-champion-select/issues"
   },
-  "homepage": "https://github.com/controlado/auto-champion-select#readme",
+  "homepage": "https://github.com/oumbreg/auto-champion-select#readme",
   "devDependencies": {
     "vite": "^4.4.6",
     "vite-plugin-css-injected-by-js": "^3.2.1"

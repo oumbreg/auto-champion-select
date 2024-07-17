@@ -1,4 +1,4 @@
-name: Publicar pacote no NPM
+name: Publish package to NPM
 
 on:
   workflow_dispatch:
@@ -15,19 +15,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Configurando o Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
 
-      - name: Instalando dependências
+      - name: Install dependencies
         run: npm install
 
-      - name: Buildando o plugin
+      - name: Build the plugin
         run: npm run build
 
-      - name: Publicando o pacote
+      - name: Publish the package
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
